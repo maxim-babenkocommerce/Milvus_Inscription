@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magecom Package
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is a subject to the Magecom license
+ * that is available through the world-wide-web at this URL:
+ * https://magecom.net/license-agreement/
+ *
+ * @copyright Magecom, Inc. (https://www.magecom.net)
+ * @license https://magecom.net/license-agreement
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Milvus\Inscription\Api\InscriptionInterface"
+                type="Milvus\Inscription\Model\Api\Inscription" />
+</config>

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Milvus\Inscription\Setup\Patch\Data;
+    namespace Milvus\Inscription\Setup\Patch\Data;
 
 use Magento\Catalog\Model\Product;
 use Magento\Catalog\Model\Product\Type;
@@ -19,7 +19,7 @@ use Zend_Validate_Exception;
  */
 class AddInscriptionAttribute implements DataPatchInterface
 {
-    private const ATTRIBUTE_CODE = 'inscription';
+    public const ATTRIBUTE_CODE = 'inscription';
     private const ATTRIBUTE_LABEL = 'Inscription Text';
     private const ATTRIBUTE_NOTE = 'Add inscription to the product';
 
