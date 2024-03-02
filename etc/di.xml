@@ -1,20 +1,24 @@
 <?xml version="1.0"?>
-<!--
-/**
- * Magecom Package
- *
- * NOTICE OF LICENSE
- *
- * This source file is a subject to the Magecom license
- * that is available through the world-wide-web at this URL:
- * https://magecom.net/license-agreement/
- *
- * @copyright Magecom, Inc. (https://www.magecom.net)
- * @license https://magecom.net/license-agreement
- */
--->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="Milvus\Inscription\Api\InscriptionInterface"
                 type="Milvus\Inscription\Model\Api\Inscription" />
+
+    <virtualType name="Milvus\Inscription\Logger\Handler" type="Magento\Framework\Logger\Handler\Base">
+        <arguments>
+            <argument name="fileName" xsi:type="string">/var/log/milvus/inscription.log</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Milvus\Inscription\Logger\VirtualLogger" type="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="debug" xsi:type="object">Milvus\Inscription\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Milvus\Inscription\Model\Api\Inscription">
+        <arguments>
+            <argument name="logger" xsi:type="object">Milvus\Inscription\Logger\VirtualLogger</argument>
+        </arguments>
+    </type>
 </config>

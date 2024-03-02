@@ -12,6 +12,13 @@ Content-Type: application/json
 
 {
     "product_id": 142,
-    "value": "test socks sign"
+    "value": "The BEST socks!"
 }
 ```
+
+## Logging
+To enable or disable logging for changes made by, API go to:
+```
+Admin Panel > Stores > Settings > Configuration > catalog > Catalog > Product Inscriptions
+```
+and switch the ```Enable Logging``` option.

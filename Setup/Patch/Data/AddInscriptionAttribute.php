@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-    namespace Milvus\Inscription\Setup\Patch\Data;
+namespace Milvus\Inscription\Setup\Patch\Data;
 
 use Magento\Catalog\Model\Product;
 use Magento\Catalog\Model\Product\Type;
@@ -87,7 +87,7 @@ class AddInscriptionAttribute implements DataPatchInterface
 
         foreach ($allAttributeSetIds as $attributeSetId) {
             $groupId = $eavSetup->getAttributeGroupId($entityTypeId, $attributeSetId, 'General');
-            $eavSetup->addAttributeToGroup($entityTypeId, $attributeSetId, $groupId,self::ATTRIBUTE_CODE, 100);
+            $eavSetup->addAttributeToGroup($entityTypeId, $attributeSetId, $groupId, self::ATTRIBUTE_CODE, 100);
         }
 
         $this->moduleDataSetup->getConnection()->endSetup();
